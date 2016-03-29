@@ -7,7 +7,7 @@ import (
 
 func main(){
 	// Get a new client
-	client, err := api.NewClient(&api.Config{Address:"192.168.1.245:8500"})
+	client, err := api.NewClient(&api.Config{Address:"192.168.1.193:8500"})
 	if err != nil {
 		panic(err)
 	}
@@ -29,3 +29,6 @@ func main(){
 	}
 	fmt.Printf("KV: %v", pair)
 }
+
+//consul agent -data-dir /tmp/consul -node=agent-two \
+//-bind=192.168.1.193 -config-dir /etc/consul.d
